@@ -11,4 +11,4 @@ RUN apt update && apt install -y libsqlite3-dev
 COPY ./startup.sh .
 RUN chmod +x ./startup.sh
 ENTRYPOINT ["./startup.sh"]
-EXPOSE 28015 28016
+EXPOSE 28015 28016 28083
