@@ -1,5 +1,6 @@
 ---
 version: "3"
+name: rust-dedicated
 services:
   rust:
     build: ./docker/rust
