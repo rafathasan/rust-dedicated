@@ -4,7 +4,7 @@ services:
   rust:
     build: ./docker/rust
     working_dir: /home/steam/rust-dedicated
-    environments:
+    environment:
       - HOSTNAME: "rustserver"
       - RECONPASS: "admin"
       - SEED: 12345
