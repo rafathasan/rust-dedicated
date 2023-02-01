@@ -1,0 +1,13 @@
+FROM cm2network/steamcmd:steam
+RUN ./steamcmd.sh +force_install_dir /home/steam/rust-dedicated +login anonymous +app_update 258550 +quit
+WORKDIR /home/steam/rust-dedicated
+
+ENV OWNERID 76561198182710063
+RUN echo "ownerid $OWNERID" >> ./cfg/users.cfg
+
+USER root
+RUN apt update && apt install -y libsqlite3-dev
+
+COPY ./startup.sh .
+ENTRYPOINT ["./startup.sh"]
+EXPOSE 28015 28016

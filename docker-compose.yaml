@@ -1,0 +1,21 @@
+---
+version: "3"
+services:
+  rust:
+    build: ./docker/rust
+    working_dir: /home/steam/rust-dedicated
+    environments:
+      - HOSTNAME: "rustserver"
+      - RECONPASS: "admin"
+      - SEED: 12345
+      - WORLDSIZE: 3000
+      - MAXPLAYER: 50
+      - SAVEINTERVAL: 300
+      - DESCRIPTION: "A rust server"
+      - HEADER_IMAGE_URL: "https://unsplash.it/512/256"
+      - WEBSITE: "https://website.com"
+      - OWNERID: 76561198182710063
+    ports:
+      - 28015:28015
+      - 28015:28015/udp
+      - 28016:28016
