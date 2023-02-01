@@ -3,7 +3,7 @@ RUN ./steamcmd.sh +force_install_dir /home/steam/rust-dedicated +login anonymous
 WORKDIR /home/steam/rust-dedicated
 
 ENV OWNERID 76561198182710063
-RUN echo "ownerid $OWNERID" >> ./server/your_server_identity/cfg/users.cfg
+RUN echo "ownerid $OWNERID" >> ./server/my_server_identity/cfg/users.cfg
 
 USER root
 RUN apt update && apt install -y libsqlite3-dev
